@@ -1,0 +1,109 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 5% 96%; /* Açık Gri */
+    --foreground: 240 6% 10%; /* Koyu Gri */
+
+    --card: 0 0% 100%; /* Beyaz */
+    --card-foreground: 240 6% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 6% 10%;
+
+    --primary: 0 72% 51%; /* Kırmızı (Esvera Rengi) */
+    --primary-foreground: 0 0% 98%; /* Çok Açık Gri (Beyaza Yakın) */
+
+    --secondary: 240 5% 84%; /* Orta Gri */
+    --secondary-foreground: 240 6% 10%;
+
+    --muted: 240 5% 84%;
+    --muted-foreground: 240 4% 46%; /* Soluk Gri */
+
+    --accent: 240 5% 84%;
+    --accent-foreground: 240 6% 10%;
+
+    --destructive: 0 84% 60%; /* Koyu Kırmızı */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%; /* Açık Gri Sınır */
+    --input: 240 6% 90%;
+    --ring: 0 72% 51%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 6% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 6% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 6% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 0 72% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', sans-serif; /* Modern bir font ailesi */
+  }
+}
+
+/* Özel animasyonlar */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px); /* Daha yumuşak bir salınım */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite; /* Daha yavaş ve yumuşak */
+}
+
+/* Ekran okuyucular için gizleme */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
