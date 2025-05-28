@@ -1,3 +1,5 @@
+// src/components/Header.jsx
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -14,7 +16,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -25,9 +27,8 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src="/logo-new"
-            src="/logo-new.png"
-            alt="KRT-RoadCafe"
+            src="/logo-text.png"
+            alt="KRT-RoadCafeBuilders Logo"
             className="w-10 h-10 sm:w-12 sm:h-12 rounded-md"
           />
           <div>
@@ -52,7 +53,7 @@ const Header = () => {
               to={item.path}
               className="flex items-center space-x-1 text-gray-600 hover:text-red-600 transition-colors duration-300"
             >
-              <span>{item.icon}</span>
+              {item.icon}
               <span>{item.name}</span>
             </Link>
           ))}
@@ -69,7 +70,7 @@ const Header = () => {
                 className="flex items-center space-x-2 text-gray-600 hover:text-red-600"
                 onClick={() => setIsOpen(false)}
               >
-                <span>{item.icon}</span>
+                {item.icon}
                 <span>{item.name}</span>
               </Link>
             </li>
